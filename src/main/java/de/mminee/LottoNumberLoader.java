@@ -1,4 +1,4 @@
-package de.martin;
+package de.mminee;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
