@@ -15,9 +15,9 @@ public class LottoNumberGenerator {
         Random random = new Random();
         Set<Integer> newRandomLottoNumbers = new HashSet<>();
 
-        while(newRandomLottoNumbers.size() < TOTAL_NUMBERS){
+        while (newRandomLottoNumbers.size() < TOTAL_NUMBERS) {
             int number = random.nextInt(NUMBER_RANGE) + 1;
-            if (!newRandomLottoNumbers.contains(number)){
+            if (!newRandomLottoNumbers.contains(number)) {
                 newRandomLottoNumbers.add(number);
             }
         }

@@ -15,29 +15,29 @@ public class LottoNumberLoader {
 
     private final String filepath;
 
-    public LottoNumberLoader (String filepath) {
+    public LottoNumberLoader(String filepath) {
 
         this.filepath = filepath;
     }
 
-    public List<Set<Integer>> loadLottoNumbers() throws IOException{
+    public List<Set<Integer>> loadLottoNumbers() throws IOException {
         List<Set<Integer>> allLottoNumbers = new ArrayList<>();
-        try(FileInputStream fis = new FileInputStream(filepath);
-            Workbook workbook = createWorkbook(fis, filepath)) {
+        try (FileInputStream fis = new FileInputStream(filepath);
+             Workbook workbook = createWorkbook(fis, filepath)) {
 
             Sheet sheet = workbook.getSheetAt(0);
-            for (Row row : sheet){
+            for (Row row : sheet) {
                 if (row.getRowNum() == 0) {
                     continue;
                 }
                 Set<Integer> lottoNumbers = new HashSet<>();
-                for (int i = 2; i <= 7; i++){
+                for (int i = 2; i <= 7; i++) {
                     Cell cell = row.getCell(i);
                     if (cell != null && !(cell.getStringCellValue().isEmpty() || cell.getStringCellValue().equals(" "))) {
                         lottoNumbers.add(Integer.parseInt(cell.getStringCellValue().replace(" ", "")));
                     }
                 }
-                if(lottoNumbers.size() == 6) {
+                if (lottoNumbers.size() == 6) {
                     allLottoNumbers.add(lottoNumbers);
                 }
             }
@@ -45,8 +45,8 @@ public class LottoNumberLoader {
         }
     }
 
-    private Workbook createWorkbook (FileInputStream fis, String filepath) throws IOException {
-        if (filepath.toLowerCase().endsWith("xlsx")){
+    private Workbook createWorkbook(FileInputStream fis, String filepath) throws IOException {
+        if (filepath.toLowerCase().endsWith("xlsx")) {
             return new XSSFWorkbook(fis);
         } else if (filepath.toLowerCase().endsWith("xls")) {
             return new HSSFWorkbook(fis);

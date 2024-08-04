@@ -16,7 +16,7 @@ public class Main {
         try {
             List<Set<Integer>> lastLottoNumbers = loader.loadLottoNumbers();
             System.out.println("Started");
-                        //System.out.println("Last Lotto Numbers " + lastLottoNumbers);
+            //System.out.println("Last Lotto Numbers " + lastLottoNumbers);
 
             generator.generateUntilMatch(lastLottoNumbers);
 
@@ -25,8 +25,8 @@ public class Main {
             //Set<Integer> newLottoNumbers = generator.generateLottoNumbers();
             //System.out.println("Generated Lotto Numbers: " + newLottoNumbers);
 
-           // double errorRate = calculator.calculateErrorRate(lastLottoNumbers, newLottoNumbers);
-           // System.out.println("Error rate" + (errorRate * 100) + "%");
+            // double errorRate = calculator.calculateErrorRate(lastLottoNumbers, newLottoNumbers);
+            // System.out.println("Error rate" + (errorRate * 100) + "%");
 
         } catch (IOException e) {
             throw new RuntimeException(e);
