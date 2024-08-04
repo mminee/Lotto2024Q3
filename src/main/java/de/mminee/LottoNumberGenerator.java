@@ -48,6 +48,10 @@ public class LottoNumberGenerator {
                     break;
                 }
                 System.out.println("WIN" + oldLottoNumbers + "---" + generatedNumbers + " || " + whiler);
+
+                Set<Integer> predicteddNumbers = generateLottoNumbers();
+                System.out.println("Will see " + predicteddNumbers);
+
             }
         }
     }
