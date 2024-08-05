@@ -25,4 +25,4 @@
       
         and so on
   
-    There is also a xls file for testing purpose in it.
+    There is also a xls file for testing purpose included.
